@@ -99,10 +99,10 @@ export default class Slide {
     this.moveSlide(this.slideArray[index].position);
     this.slideIndexNav(index);
     this.dist.finalPosition = activeSlide.position;
-    this.changeActive();
+    this.changeActiveClass();
   }
 
-  changeActive() {
+  changeActiveClass() {
     this.slideArray.forEach((item) =>
       item.element.classList.remove(this.activeClass)
     );
@@ -121,10 +121,10 @@ export default class Slide {
     if (this.index.next !== undefined) this.changeSlide(this.index.next);
   }
 
-  onResize(event) {
+  onResize() {
     setTimeout(() => {
       this.slidesConfig();
-      this.changeActive(this.index.active);
+      this.changeSlide(this.index.active);
     }, 1000);
   }
 
