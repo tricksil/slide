@@ -81,7 +81,6 @@ export default class Slide {
   slidesConfig() {
     this.slideArray = [...this.slide.children].map((element) => {
       const position = this.slidePosition(element);
-      console.log(position);
       return { element, position };
     });
   }
